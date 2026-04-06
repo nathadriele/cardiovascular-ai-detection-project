@@ -1,0 +1,52 @@
+# ========================================
+# Cardiovascular AI Detection Project
+# Dependencies
+# Author: Nathalia Adriele
+# ========================================
+
+# Core Data Science
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+imbalanced-learn>=0.11.0
+
+# Interpretability
+shap>=0.42.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# Web Application
+streamlit>=1.28.0
+streamlit-option-menu>=0.3.6
+
+# Data Processing
+joblib>=1.3.0
+pyarrow>=12.0.0
+
+# Development
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.1.0
+mypy>=1.5.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.25.0
+nbconvert>=7.8.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+logging>=0.4.9.6
+
+# Documentation
+markdown>=3.5.0
