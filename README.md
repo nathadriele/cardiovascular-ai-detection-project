@@ -467,9 +467,7 @@ A aplicação web interativa inclui:
 
 **Nathalia Adriele**
 
-Engenheira de IA & Cientista de Dados
-
-Especialista em Machine Learning aplicado à saúde
+Engenheira de Dados & Pesquisadora de AI aplicado à saúde
 
 ---
 
