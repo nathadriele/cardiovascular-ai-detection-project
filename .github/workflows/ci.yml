@@ -5,6 +5,10 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:  # Allow manual triggering
+
+# NOTE: Pipeline is currently disabled. To enable, uncomment the jobs below.
+# Currently leaving inactive as requested by user.
 
 jobs:
   test:
@@ -113,7 +117,7 @@ jobs:
         context: .
         push: ${{ github.event_name != 'pull_request' }}
         tags: |
-          nathadriele/cardiovascular-ai:latest
-          nathadriele/cardiovascular-ai:${{ github.sha }}
-        cache-from: type=registry,ref=nathadriele/cardiovascular-ai:buildcache
-        cache-to: type=registry,ref=nathadriele/cardiovascular-ai:buildcache,mode=max
+          nathaliaadriele/cardiovascular-ai:latest
+          nathaliaadriele/cardiovascular-ai:${{ github.sha }}
+        cache-from: type=registry,ref=nathaliaadriele/cardiovascular-ai:buildcache
+        cache-to: type=registry,ref=nathaliaadriele/cardiovascular-ai:buildcache,mode=max

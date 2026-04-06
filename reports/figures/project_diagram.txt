@@ -283,6 +283,7 @@ STATUS: COMPLETO E FUNCIONAL
 AUTORA: Nathalia Adriele
 DATA: Abril 2026
 VERSAO: 1.0.0
+LICENCA: MIT
 
 ARQUITETURA:
 • 5 camadas bem definidas
@@ -309,6 +310,6 @@ ETICA E RESPONSABILIDADE:
 • Conformidade LGPD/GDPR
 
 OBJETIVO:
-Portfólio em IA aplicada a saude
+Portfólio profissional em IA aplicada a saude
 
 ================================================================================

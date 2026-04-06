@@ -24,10 +24,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/nathadriele/cardiovascular-ai-detection"
-Documentation = "https://github.com/nathadriele/cardiovascular-ai-detection/blob/main/docs/methodology.md"
-Repository = "https://github.com/nathadriele/cardiovascular-ai-detection"
-"Bug Tracker" = "https://github.com/nathadriele/cardiovascular-ai-detection/issues"
+Homepage = "https://github.com/nathaliaadriele/cardiovascular-ai-detection"
+Documentation = "https://github.com/nathaliaadriele/cardiovascular-ai-detection/blob/main/docs/methodology.md"
+Repository = "https://github.com/nathaliaadriele/cardiovascular-ai-detection"
+"Bug Tracker" = "https://github.com/nathaliaadriele/cardiovascular-ai-detection/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

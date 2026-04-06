@@ -1,4 +1,4 @@
-# Detecção de Doenças Cardiovasculares com Inteligência Artificial
+# Detecção de Doenças Cardiovasculares com Inteligência Artificial - Em fase de teste e desenvolvimento
 
 **Autora:** Nathalia Adriele
 
@@ -67,19 +67,19 @@
 
 ## Resumo Executivo
 
-Projeto completo de Engenharia de IA aplicada à saúde para detecção de doenças cardiovasculares utilizando técnicas de Machine Learning. O sistema implementa um pipeline end-to-end desde o pré-processamento de dados até a interface de predição via Streamlit, seguindo boas práticas de MLOps, documentação técnica e desenvolvimento responsável para a área da saúde.
+Este projeto está em andamento e em fases de teste e validação. É um projeto de Engenharia de IA aplicada à saúde para detecção de doenças cardiovasculares utilizando técnicas de Machine Learning. O sistema implementa um pipeline end-to-end desde o pré-processamento de dados até a interface de predição via Streamlit, seguindo boas práticas de MLOps, documentação técnica e desenvolvimento responsável para a área da saúde.
 
 **Status do Projeto:** Completo e Funcional
 
 ---
 
-## Problema e Motivação
+## Problema
 
 As doenças cardiovasculares representam a principal causa de morte mundial, responsáveis por aproximadamente 17,9 milhões de óbitos anualmente segundo a Organização Mundial da Saúde. A detecção precoce e a estratificação de risco são fundamentais para prevenção e tratamento adequado.
 
 Este projeto desenvolve um sistema de apoio à decisão clínica que utiliza dados demográficos, clínicos, laboratoriais e comportamentais para identificar padrões de risco cardiovascular, auxiliando profissionais de saúde na triagem e avaliação de pacientes.
 
-**AVISO IMPORTANTE:** Este sistema é uma ferramenta de apoio à decisão e não substitui avaliação médica profissional. Uso clínico requer validação adicional.
+**OBS:** Este sistema teste é uma ferramenta de aprendizado de apoio à decisão e não substitui avaliação médica profissional ou algo do tipo.
 
 ---
 
@@ -480,8 +480,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 ## Agradecimentos
 
 - Comunidade científica de IA em saúde
-- Contribuidores de bibliotecas open-source
-- Profissionais de saúde que colaboraram com validação de domínio
 
 ---
 
