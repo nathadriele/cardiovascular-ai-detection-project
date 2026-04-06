@@ -447,7 +447,7 @@ A aplicação web interativa inclui:
 - [ ] Validação em dataset externo
 - [ ] Otimização de hiperparâmetros
 - [ ] Testes A/B com clínicos
-- [ ] Deploy em nuvem (AWS/GCP)
+- [ ] Deploy em nuvem (AWS)
 
 ### Médio Prazo
 - [ ] Integração com sistemas clínicos (HL7/FHIR)
@@ -503,7 +503,7 @@ Para dúvidas, sugestões ou colaborações:
 
 <div align="center">
 
-**Desenvolvido com ciencia e dedicação**
+**Desenvolvido para treinar, testar e validar**
 
 [Voltar ao topo](#detecção-de-doenças-cardiovasculares-com-inteligencia-artificial)
 
