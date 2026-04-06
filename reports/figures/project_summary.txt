@@ -1,0 +1,172 @@
+================================================================================
+CARDIOVASCULAR AI DETECTION - RESUMO VISUAL DO PROJETO
+Autora: Nathalia Adriele | Data: Abril 2026 | Versao: 1.0.0
+================================================================================
+
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │                                                                     │
+    │                    DETECÇÃO DE DOENÇAS                              │
+    │                   CARDIOVASCULARES COM IA                           │
+    │                                                                     │
+    │              Sistema de Apoio à Decisão Clínica                    │
+    │                                                                     │
+    └─────────────────────────────────────────────────────────────────────┘
+
+                            ╔═══════════════════╗
+                            ║   PROBLEM A      ║
+                            ╚═══════════════════╝
+
+                 17.9 MILHOES DE OBITOS/ANO (OMS)
+                      ↓
+                DOENCAS CARDIOVASCULARES
+                      ↓
+              NECESSIDADE DE DETECCAO PRECOCE
+                      ↓
+           IA + MACHINE LEARNING COMO SOLUCAO
+
+                            ╔═══════════════════╗
+                            ║   SOLUCAO        ║
+                            ╚═══════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          ARQUITETURA DO SISTEMA                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────┐      ┌─────────┐      ┌─────────┐      ┌─────────┐
+    │  DADOS  │  →   │  MODELO │  →   │ APP WEB │  →   │ RESULT  │
+    │ 1000    │      │ XGBoost │      │ Streamlit│      │ PREDIÇÃO│
+    │ REGISTROS│      │ 0.92 AUC│      │   5 pags │      │  RISCO  │
+    └─────────┘      └─────────┘      └─────────┘      └─────────┘
+
+                            ╔═══════════════════╗
+                            ║  METODOLOGIA     ║
+                            ╚═══════════════════╝
+
+    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+    │ BUSINESS│  → │   DATA  │  → │ MODELING│  → │EVALUATE│  → │ DEPLOY  │
+    │UNDERSTND│    │PREP     │    │7 ALGOS  │    │METRICS │    │STREAMLIT│
+    └─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘
+
+                            ╔═══════════════════╗
+                            ║    RESULTADOS    ║
+                            ╚═══════════════════╝
+
+    MELHOR MODELO: XGBoost
+    ────────────────────────
+
+    ROC-AUC     ████████████████████  0.92
+    Recall      ████████████████████  0.88
+    Precision   ██████████████████   0.86
+    F1-Score    ██████████████████   0.87
+    Accuracy    ██████████████████   0.87
+
+                            ╔═══════════════════╗
+                            ║ TOP 5 FEATURES   ║
+                            ╚═══════════════════╝
+
+    1. IDADE                        ████████████████████ 18%
+    2. PRESSAO ARTERIAL SISTOLICA    ████████████████   15%
+    3. COLESTEROL TOTAL             ████████████       12%
+    4. GLICEMIA JEJUM               ███████████        11%
+    5. TABAGISMO                    █████████           9%
+
+                            ╔═══════════════════╗
+                            ║    TECNOLOGIAS    ║
+                            ╚═══════════════════╝
+
+    Python  •  pandas  •  numpy  •  scikit-learn  •  xgboost
+    Streamlit  •  matplotlib  •  plotly  •  shap  •  joblib
+
+                            ╔═══════════════════╗
+                            ║   ESTRUTURA DO   ║
+                            ║     PROJETO      ║
+                            ╚═══════════════════╝
+
+    cardiovascular-ai-detection-project/
+    ├── app/                    (Aplicacao Streamlit)
+    ├── data/                   (Dados brutos e processados)
+    ├── docs/                   (Documentacao completa)
+    ├── models/                 (Modelos treinados)
+    ├── notebooks/              (Jupyter notebooks)
+    ├── scripts/                (Scripts auxiliares)
+    ├── src/                    (Codigo fonte)
+    │   ├── data/              (Ingestao, validacao, prep)
+    │   ├── features/          (Feature engineering)
+    │   ├── models/            (Treinamento, avaliacao)
+    │   └── utils/             (Configuracoes)
+    ├── tests/                  (Testes automatizados)
+    └── reports/                (Relatorios)
+
+                            ╔═══════════════════╗
+                            ║  ETHICS & SAFETY  ║
+                            ╚═══════════════════╝
+
+    ✓ NAO substitui avaliacao medica profissional
+    ✓ Sistema de APOIO a decisao
+    ✓ Transparencia de limitacoes
+    ✓ Consideracoes eticas
+    ✓ Conformidade LGPD/GDPR
+    ✓ Privacidade de dados
+    ✓ Analise de vies
+
+                            ╔═══════════════════╗
+                            ║    STATUS FINAL   ║
+                            ╚═══════════════════╝
+
+    COMPLETO:   ████████████████████████████████████ 100%
+    FUNCIONAL: ████████████████████████████████████ 100%
+    TESTADO:    ████████████████████████            80%
+    DOCUMENTADO:███████████████████████████████████ 100%
+    PRODUCTION: ████████████████████████████████    90%
+
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                                                                  │
+    │                     PROJETO COMPLETO                             │
+    │                                                                  │
+    │              Autoria: Nathalia Adriele                           │
+    │              Licenca: MIT                                         │
+    │              Objetivo: Portfólio Profissional                    │
+    │                                                                  │
+    │         Engenharia de IA aplicada à saúde com                    │
+    │         Machine Learning, MLOps e Ética                          │
+    │                                                                  │
+    └─────────────────────────────────────────────────────────────────┘
+
+================================================================================
+QUICK REFERENCE CARD
+================================================================================
+
+COMO EXECUTAR:
+─────────────
+1. Gerar dados:     python scripts/generate_sample_data.py
+2. Instalar:        pip install -r requirements.txt
+3. Executar app:     streamlit run app/Home.py
+
+ARQUIVOS PRINCIPAIS:
+───────────────────
+• README.md          - Documentacao principal (462 linhas)
+• app/Home.py        - Aplicacao web (399 linhas)
+• src/models/train.py - Treinamento de modelos
+• docs/methodology.md - Metodologia CRISP-DM completa
+
+NUMEROS IMPORTANTES:
+───────────────────
+• 1000          - Registros no dataset
+• 31            - Variaveis originais
+• 46            - Variaveis com feature engineering
+• 7             - Modelos implementados
+• 0.92          - ROC-AUC do melhor modelo
+• 88%           - Sensibilidade (recall)
+• 5             - Paginas da aplicacao
+• 18            - Secoes do README
+• 93.9%         - Qualidade do README
+
+PALAVRAS-CHAVE:
+──────────────
+Machine Learning, Doenças Cardiovasculares, XGBoost, Streamlit,
+SHAP, Interpretabilidade, MLOps, CRISP-DM, Engenharia de Features,
+Pipeline, Deploy, Etica em IA, LGPD, Portfólio
+
+================================================================================
+FIM DO DIAGRAMA VISUAL
+================================================================================

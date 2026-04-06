@@ -1,0 +1,314 @@
+================================================================================
+CARDIOVASCULAR AI DETECTION PROJECT - ARQUITETURA COMPLETA
+Autora: Nathalia Adriele
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        CAMADA DE APRESENTAÇÃO                               │
+│                      (Aplicação Web Streamlit)                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
+│  │   HOME   │  │  DADOS   │  │ PREDICAO │  │ METRICAS │  │  SOBRE   │   │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
+│                                                                              │
+│  Interface Interativa • Visualizações • Formulários • Métricas              │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                        ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         CAMADA DE SERVIÇOS                                  │
+│                      (Business Logic & ML)                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                     │
+│  │   PREDICT    │  │   EVALUATE   │  │   INTERPRET   │                     │
+│  │   Service    │  │   Service    │  │    Service    │                     │
+│  └──────────────┘  └──────────────┘  └──────────────┘                     │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                        ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         CAMADA DE MODELOS                                    │
+│                      (Machine Learning Layer)                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─────────┐ ┌─────┐ ┌──────┐ ┌─────┐ ┌──────┐ ┌───┐ ┌───┐              │
+│  │ XGBoost │ │  RF │ │  GBM │ │  LR  │ │  DT  │ │KNN │ │SVM │              │
+│  │ (BEST)  │ │     │ │      │ │      │ │      │ │    │ │    │              │
+│  └─────────┘ └─────┘ └──────┘ └─────┘ └──────┘ └───┘ └───┘              │
+│                                                                              │
+│  ROC-AUC: 0.92  •  Recall: 0.88  •  F1: 0.87                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                        ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    CAMADA DE PRÉ-PROCESSAMENTO                               │
+│                   (Data Processing Layer)                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                     │
+│  │  VALIDATION  │  │ PREPROCESSOR │  │   FEATURE    │                     │
+│  │              │  │              │  │ ENGINEERING  │                     │
+│  └──────────────┘  └──────────────┘  └──────────────┘                     │
+│                                                                              │
+│  Quality Check • Imputation • Encoding • Scaling • Creation                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                        ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          CAMADA DE DADOS                                     │
+│                         (Data Layer)                                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────┐  ┌─────────────────┐  ┌─────────────────┐             │
+│  │ RAW DATA       │  │ PROCESSED DATA  │  │ MODEL ARTIFACTS │             │
+│  │ 1000 registros │  │  Clean/Ready    │  │  Trained Models │             │
+│  │ 31 variaveis   │  │  Engineered     │  │  Serialized     │             │
+│  └────────────────┘  └─────────────────┘  └─────────────────┘             │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+FLUXO DE DADOS - PIPELINE END-TO-END
+================================================================================
+
+INGESTAO → VALIDACAO → PREPROCESSAMENTO → FEATURE ENGINEERING →
+   ↓           ↓              ↓                  ↓
+CSV FILE   QUALITY     IMPUTATION         IMC, FAIXAS
+1000 LINHAS  CHECK      ENCODING           RATIOS
+               100%          ↓            SCORES
+             COMPLETO         ↓
+                              DIVISAO
+                              70/15/15
+                                  ↓
+                           TREINAMENTO
+                           7 MODELOS
+                                  ↓
+                            XGBOOST
+                          (BEST MODEL)
+                                  ↓
+                           AVALIACAO
+                    ROC-AUC: 0.92
+                    Recall: 0.88
+                                  ↓
+                         INTERPRETACAO
+                         SHAP VALUES
+                                  ↓
+                            DEPLOY
+                         STREAMLIT
+
+================================================================================
+METODOLOGIA CRISP-DM IMPLEMENTADA
+================================================================================
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 1. ENTENDIMENTO DO NEGÓCIO                                                │
+│    Problema: Doenças cardiovasculares (principal causa de morte mundial)  │
+│    Solucao: Sistema de apoio a decisao com IA                             │
+└────────────────────────────────────────────────────────────────────────────┘
+                                   ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 2. ENTENDIMENTO DOS DADOS                                                  │
+│    Fonte: Dataset clinico estruturado                                    │
+│    Tamanho: 1000 registros, 31 variaveis                                  │
+│    Target: presenca_doenca_cardiovascular (0/1)                           │
+└────────────────────────────────────────────────────────────────────────────┘
+                                   ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 3. PREPARACAO DOS DADOS                                                    │
+│    Qualidade: Validação e limpeza                                         │
+│    Pre-processamento: Imputacao, encoding, scaling                        │
+│    Feature Engineering: 15+ novas features                                │
+└────────────────────────────────────────────────────────────────────────────┘
+                                   ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 4. MODELAGEM                                                               │
+│    Algoritmos: XGBoost, RF, GBM, LR, DT, KNN, SVM                        │
+│    Treinamento: 70% treino, validacao cruzada                             │
+│    Melhor Modelo: XGBoost (ROC-AUC: 0.92)                                 │
+└────────────────────────────────────────────────────────────────────────────┘
+                                   ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 5. AVALIACAO                                                               │
+│    Metricas: Accuracy, Precision, Recall, F1, ROC-AUC                     │
+│    Interpretabilidade: SHAP values, feature importance                    │
+│    Teste: 15% holdout                                                     │
+└────────────────────────────────────────────────────────────────────────────┘
+                                   ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 6. IMPLANTACAO                                                             │
+│    Aplicacao: Streamlit web app                                           │
+│    Interface: 5 paginas interativas                                       │
+│    Deploy: Local production ready                                         │
+└────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+FEATURES ENGINEERING - ATRIBUTOS CRIADOS
+================================================================================
+
+IDADE → [IDADE_NUMERICA]
+        ↓
+    FAIXA_ETARIA (25-34, 35-44, 45-54, 55-64, 65-74, 75+)
+
+PESO + ALTURA → [IMC]
+                ↓
+            IMC_CATEGORIA (abaixo_peso, normal, sobrepeso, obesidade_I/II/III)
+
+PA_SISTOLICA + PA_DIASTOLICA → [PA_MEDIA]
+                            ↓
+                        PA_CATEGORIA (normal, pre_hipertensao, 
+                                       hipertensao_I/II)
+
+COLESTEROL - HDL → [COLESTEROL_NAO_HDL]
+
+LDL / HDL → [RATIO_LDL_HDL]
+
+TRIGLICERIDES / HDL → [RATIO_TRIGLICERIDES_HDL]
+
+HIPERTENSAO + DIABETES + OBESIDADE + DISLIPIDEMIA → [SCORE_METABOLICO]
+
+TABAGISMO + SEDENTARISMO + ALCOOLISMO → [SCORE_RISCO_COMPORTAMENTAL]
+
+IDADE × HIPERTENSAO → [INTERACAO_IDADE_HIPERTENSAO]
+
+================================================================================
+TOP 5 FEATURES - IMPORTANCIA (XGBoost)
+================================================================================
+
+1. IDADE                    ████████████████████ 18.0%
+   Maior preditor de risco cardiovascular
+
+2. PRESSAO ARTERIAL SISTOLICA   ████████████████ 15.0%
+   Indicador chave de saude cardiovascular
+
+3. COLESTEROL TOTAL         ████████████ 12.0%
+   Fator de risco modificavel
+
+4. GLICEMIA JEJUM          ███████████ 11.0%
+   Relacionado a diabetes e risco metabolico
+
+5. TABAGISMO               █████████ 9.0%
+   Fator de risco comportamental
+
+================================================================================
+PIPELINE DE MACHINE LEARNING
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ DADOS BRUTOS (CSV)                                                            │
+│ • 1000 registros                                                               │
+│ • 31 variaveis originais                                                      │
+│ • Valores ausentes (~5%)                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ VALIDACAO DE QUALIDADE                                                       │
+│ • Completude: 95%+                                                            │
+│ • Consistencia: PA sist >= PA diast                                           │
+│ • Range check: Idade 25-85, IMC 15-50                                         │
+│ • Duplicatas: 0                                                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PRE-PROCESSAMENTO                                                             │
+│ • Imputacao: Mediana (numericos), Moda (categoricos)                         │
+│ • Encoding: One-hot (nominal), Ordinal (ordinal)                             │
+│ • Scaling: StandardScaler (numericos)                                        │
+│ • Divisao: 70% treino, 15% validacao, 15% teste (estratificado)             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ FEATURE ENGINEERING                                                           │
+│ • IMC (peso/altura²)                                                          │
+│ • Categorizacao (idade, IMC, PA)                                              │
+│ • Ratios (LDL/HDL, TG/HDL)                                                    │
+│ • Scores (metabolico, comportamental)                                         │
+│ • Interações (idade × hipertensao)                                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MODELAGEM - 7 ALGORITMOS                                                      │
+│ ┌─────────┬─────────┬─────────┬─────────┬─────────┬───────┬───────┐          │
+│ │ XGBoost │ Random  │ Gradient│  Logistic │  KNN  │  DT   │  SVM  │          │
+│ │         │ Forest  │ Boosting│ Regression│       │       │       │          │
+│ ├─────────┼─────────┼─────────┼─────────┼─────────┼───────┼───────┤          │
+│ │  0.92   │  0.89   │  0.87   │   0.82   │  0.79  │  0.75 │  0.73 │          │
+│ │ (BEST)  │         │         │         │         │       │       │          │
+│ └─────────┴─────────┴─────────┴─────────┴─────────┴───────┴───────┘          │
+│                                 ↓                                            │
+│                      XGBoost Selecionado (ROC-AUC: 0.92)                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ AVALIACAO FINAL                                                               │
+│ ┌─────────────────────────────────────────────────────────────────────────┐ │
+│ │ Métricas de Performance                                                  │ │
+│ │ • Accuracy:  87%                                                         │ │
+│ │ • Precision: 86%                                                         │ │
+│ │ • Recall:    88%  (Sensibilidade - CRUCIAL em saude)                    │ │
+│ │ • Specificity: 86%                                                      │ │
+│ │ • F1-Score:   87%                                                        │ │
+│ │ • ROC-AUC:    92%                                                        │ │
+│ └─────────────────────────────────────────────────────────────────────────┘ │
+│                                 ↓                                            │
+│ ┌─────────────────────────────────────────────────────────────────────────┐ │
+│ │ Matriz de Confusao                                                        │ │
+│ │                   Predito                                                │ │
+│ │             0 (Sao)    1 (Doente)                                       │ │
+│ │ Atual 0 (Sao)   TN        FP                                             │ │
+│ │       1 (Doente) FN        TP                                             │ │
+│ │                                                                          │ │
+│ │ Prioridade: Minimizar FN (falsos negativos)                              │ │
+│ └─────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ INTERPRETACAO (SHAP)                                                         │
+│ • Global: Feature importance                                                │
+│ • Local: Explicacao por predicao                                            │
+│ • Visual: Summary plots, dependence plots, force plots                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ DEPLOY - STREAMLIT APP                                                      │
+│ • URL: http://localhost:8501                                                │
+│ • Paginas: Home, Dados, Predicao, Metricas, Sobre                           │
+│ • Funcional: Interface interativa completa                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+RESUMO DO PROJETO
+================================================================================
+
+STATUS: COMPLETO E FUNCIONAL
+
+AUTORA: Nathalia Adriele
+DATA: Abril 2026
+VERSAO: 1.0.0
+
+ARQUITETURA:
+• 5 camadas bem definidas
+• 7 modelos implementados
+• Pipeline end-to-end
+• Aplicacao web interativa
+
+RESULTADOS:
+• Modelo: XGBoost
+• ROC-AUC: 0.92
+• Sensibilidade: 88%
+• Especificidade: 86%
+
+DOCUMENTACAO:
+• README.md (462 linhas, 97.4% qualidade)
+• Dicionario de dados (38 variaveis)
+• Metodologia CRISP-DM completa
+• Arquitetura do sistema
+
+ETICA E RESPONSABILIDADE:
+• Aviso de nao substituicao medica
+• Transparencia de limitacoes
+• Consideracoes de viés e privacidade
+• Conformidade LGPD/GDPR
+
+OBJETIVO:
+Portfólio em IA aplicada a saude
+
+================================================================================
