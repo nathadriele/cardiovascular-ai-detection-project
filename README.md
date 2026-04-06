@@ -2,6 +2,9 @@
 
 **Autora:** Nathalia Adriele
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/78e4637a-fd28-4ccb-a7bb-3616b4a1f249" />
+
+
 <div align="center">
 
 <!-- Python & License -->
