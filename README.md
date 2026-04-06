@@ -293,7 +293,7 @@ cardiovascular-ai-detection-project/
 
 ### Passo 1: Clone o repositório
 ```bash
-git clone https://github.com/nathaliaadriele/cardiovascular-ai-detection-project.git
+git clone https://github.com/nathadriele/cardiovascular-ai-detection-project.git
 cd cardiovascular-ai-detection-project
 ```
 
