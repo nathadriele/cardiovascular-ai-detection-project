@@ -1,8 +1,3 @@
-"""
-Tests for preprocessing module
-Author: Nathalia Adriele
-"""
-
 import pytest
 import pandas as pd
 import numpy as np
@@ -62,10 +57,7 @@ class TestColumnIdentification:
 
 
 class TestPreprocessingPipeline:
-    """Test preprocessing pipeline creation."""
-
     def test_create_pipeline(self):
-        """Test creation of preprocessing pipeline."""
         numeric_cols = ['idade', 'peso']
         categorical_cols = ['sexo']
         binary_cols = ['fumante']
@@ -106,8 +98,6 @@ class TestPreprocessingPipeline:
 
 
 class TestDataPreprocessing:
-    """Test complete data preprocessing."""
-
     @pytest.fixture
     def sample_data(self):
         """Create sample cardiovascular data."""
@@ -151,10 +141,7 @@ class TestDataPreprocessing:
 
 
 class TestDataQuality:
-    """Test data quality checks."""
-
     def test_handle_missing_values(self):
-        """Test handling of missing values."""
         df = pd.DataFrame({
             'idade': [25, np.nan, 35],
             'peso': [70.5, 80.2, np.nan],
@@ -166,7 +153,6 @@ class TestDataQuality:
         assert df['peso'].isna().sum() == 1
 
     def test_data_validation(self):
-        """Test data validation."""
         df = pd.DataFrame({
             'idade': [25, 30, 150],  # 150 is invalid
             'pa_sistolica': [120, 130, 80],
