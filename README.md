@@ -1,79 +1,50 @@
-# Detecção de Doenças Cardiovasculares com Inteligência Artificial
-#### Em fase de teste e desenvolvimento
+# Detecção de Doenças Cardiovasculares com Inteligência Artificial 
 
-**Autora:** Nathalia Adriele
-
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/78e4637a-fd28-4ccb-a7bb-3616b4a1f249" />
-
+Em fase de teste e desenvolvimento
 
 <div align="center">
 
-<!-- Python & License -->
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)
-
-<!-- Data Science -->
 ![pandas](https://img.shields.io/badge/pandas-2.0+-150044.svg)
 ![numpy](https://img.shields.io/badge/numpy-1.24+-013243.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3+-F7931E.svg)
-
-<!-- ML Frameworks -->
 ![XGBoost](https://img.shields.io/badge/XGBoost-2.0+-FF6B6B.svg)
 ![RandomForest](https://img.shields.io/badge/Random%20Forest-00A86B.svg)
 ![GradientBoosting](https://img.shields.io/badge/Gradient%20Boosting-FFA500.svg)
 ![LightGBM](https://img.shields.io/badge/LightGBM-4.0+-32CD32.svg)
-
-<!-- Interpretability -->
 ![SHAP](https://img.shields.io/badge/SHAP-0.42+-gradient.svg)
-
-<!-- Visualization -->
 ![matplotlib](https://img.shields.io/badge/matplotlib-3.7+-FF5733.svg)
 ![seaborn](https://img.shields.io/badge/seaborn-0.12+-3C4254.svg)
 ![plotly](https://img.shields.io/badge/plotly-5.17+-3F4F75.svg)
-
-<!-- Web App -->
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)
-
-<!-- MLOps -->
 ![pytest](https://img.shields.io/badge/pytest-7.4+-0A9EDC.svg)
 ![joblib](https://img.shields.io/badge/joblib-1.3+-F44336.svg)
-
-<!-- Development -->
 ![black](https://img.shields.io/badge/code%20style-black-000000.svg)
 ![flake8](https://img.shields.io/badge/linting-flake8-3776AB.svg)
 ![mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg)
-
-<!-- Domain -->
 ![Healthcare](https://img.shields.io/badge/Domain-Healthcare-red.svg)
 ![Machine Learning](https://img.shields.io/badge/Domain-Machine%20Learning-yellow.svg)
 ![Classification](https://img.shields.io/badge/Task-Classification-success.svg)
 ![MLOps](https://img.shields.io/badge/MLOps-Automation-orange.svg)
-
-<!-- Metrics -->
 ![ROC-AUC](https://img.shields.io/badge/ROC--AUC-0.92-brightgreen.svg)
 ![Accuracy](https://img.shields.io/badge/Accuracy-0.87-blue.svg)
 ![Recall](https://img.shields.io/badge/Recall-0.88-orange.svg)
 ![F1-Score](https://img.shields.io/badge/F1--Score-0.87-green.svg)
-
-<!-- CI/CD -->
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue.svg)
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)
-
-<!-- Quality -->
 ![Code Quality](https://img.shields.io/badge/Code%20Quality-A-success.svg)
 ![Documentation](https://img.shields.io/badge/Documentation-Complete-brightgreen.svg)
 ![Tests](https://img.shields.io/badge/Tests-Pytest-0A9EDC.svg)
 
 </div>
 
-## Resumo Executivo
+## Resumo
 
 Este projeto está em andamento e em fases de teste e validação. É um projeto de Engenharia de IA aplicada à saúde para detecção de doenças cardiovasculares utilizando técnicas de Machine Learning. O sistema implementa um pipeline end-to-end desde o pré-processamento de dados até a interface de predição via Streamlit, seguindo boas práticas de MLOps, documentação técnica e desenvolvimento responsável para a área da saúde.
-
-**Status do Projeto:** Completo e Funcional
 
 ---
 
@@ -83,14 +54,14 @@ As doenças cardiovasculares representam a principal causa de morte mundial, res
 
 Este projeto desenvolve um sistema de apoio à decisão clínica que utiliza dados demográficos, clínicos, laboratoriais e comportamentais para identificar padrões de risco cardiovascular, auxiliando profissionais de saúde na triagem e avaliação de pacientes.
 
-**OBS:** Este sistema teste é uma ferramenta de aprendizado de apoio à decisão e não substitui avaliação médica profissional ou algo do tipo.
+**Observação:** Este sistema teste é uma ferramenta de aprendizado de apoio à decisão e não substitui avaliação médica profissional ou algo do tipo.
 
 ---
 
 ## Objetivos
 
 ### Objetivo Geral
-Desenvolver um sistema completo de detecção de doenças cardiovasculares utilizando Machine Learning, com interface interativa e documentação técnica rigorosa.
+Desenvolver um sistema completo de detecção de doenças cardiovasculares utilizando Machine Learning, com interface interativa e documentação técnica.
 
 ### Objetivos Específicos
 - Implementar pipeline completo de ciência de dados
@@ -467,14 +438,6 @@ A aplicação web interativa inclui:
 
 ---
 
-## Autora
-
-**Nathalia Adriele**
-
-Engenheira de Dados & Pesquisadora de AI aplicado à saúde
-
----
-
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
@@ -507,7 +470,7 @@ Para dúvidas, sugestões ou colaborações:
 
 <div align="center">
 
-**Desenvolvido para treinar, testar e validar**
+**Desenvolvido para evoluir**
 
 [Voltar ao topo](#detecção-de-doenças-cardiovasculares-com-inteligencia-artificial)
 
