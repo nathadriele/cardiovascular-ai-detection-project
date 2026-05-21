@@ -1,10 +1,3 @@
-"""
-Sample Data Generator for Cardiovascular AI Detection
-Author: Nathalia Adriele
-
-Gera dataset sintético para demonstração do projeto.
-"""
-
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -15,16 +8,6 @@ logger = logging.getLogger(__name__)
 
 
 def generate_cardiovascular_data(n_samples: int = 1000, random_state: int = 42) -> pd.DataFrame:
-    """
-    Gera dados sintéticos de doença cardiovascular.
-
-    Args:
-        n_samples: Número de amostras
-        random_state: Semente aleatória
-
-    Returns:
-        DataFrame com dados gerados
-    """
     logger.info(f"Gerando {n_samples} amostras de dados cardiovascular")
 
     np.random.seed(random_state)
@@ -129,13 +112,6 @@ def generate_cardiovascular_data(n_samples: int = 1000, random_state: int = 42) 
 
 
 def save_data(df: pd.DataFrame, output_dir: str = "data/raw") -> None:
-    """
-    Salva dataset gerado.
-
-    Args:
-        df: DataFrame a ser salvo
-        output_dir: Diretório de saída
-    """
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
