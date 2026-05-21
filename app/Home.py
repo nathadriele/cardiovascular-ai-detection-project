@@ -11,10 +11,8 @@ import os
 import pandas as pd
 import numpy as np
 
-# Adicionar diretório src ao path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Configurar página
 st.set_page_config(
     page_title="Cardiovascular AI Detection",
     page_icon="heart_pulse",
@@ -22,7 +20,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# CSS customizado
 st.markdown("""
 <style>
     .main-header {
