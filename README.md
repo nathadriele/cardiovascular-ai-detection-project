@@ -48,7 +48,7 @@ Este projeto está em andamento e em fases de teste e validação. É um projeto
 
 ---
 
-## Problema
+## Problema de Pesquisa
 
 As doenças cardiovasculares representam a principal causa de morte mundial, responsáveis por aproximadamente 17,9 milhões de óbitos anualmente segundo a Organização Mundial da Saúde. A detecção precoce e a estratificação de risco são fundamentais para prevenção e tratamento adequado.
 
@@ -140,95 +140,6 @@ Modelagem → Avaliação → Interpretabilidade → Deploy (Streamlit)
    - Importância de features
    - Valores SHAP
    - Análise de predições individuais
-
----
-
-## Estrutura do Projeto
-
-```
-cardiovascular-ai-detection-project/
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml                 # Pipeline CI/CD
-│
-├── app/
-│   ├── Home.py                    # Página inicial
-│   ├── pages/
-│   │   ├── 01_Sobre_o_Projeto.py
-│   │   ├── 02_Exploracao_dos_Dados.py
-│   │   ├── 03_Predicao.py
-│   │   ├── 04_Metricas_do_Modelo.py
-│   │   ├── 05_Interpretabilidade.py
-│   │   └── 06_Limitacoes_e_Etica.py
-│   ├── components/
-│   │   ├── data_explorer.py
-│   │   ├── predictor.py
-│   │   └── visualizations.py
-│   └── utils/
-│       ├── config.py
-│       └── helpers.py
-│
-├── data/
-│   ├── raw/                       # Dados originais
-│   ├── processed/                 # Dados tratados
-│   └── external/                  # Dados externos
-│
-├── models/
-│   ├── trained/                   # Modelos serializados
-│   └── artifacts/                 # Artefatos de treino
-│
-├── notebooks/
-│   ├── 01_eda.ipynb              # Análise exploratória
-│   ├── 02_preprocessing.ipynb    # Pré-processamento
-│   ├── 03_modeling.ipynb         # Modelagem
-│   ├── 04_evaluation.ipynb       # Avaliação
-│   └── 05_interpretability.ipynb # Interpretabilidade
-│
-├── src/
-│   ├── __init__.py
-│   ├── data/
-│   │   ├── ingestion.py          # Ingestão de dados
-│   │   ├── validation.py         # Validação de qualidade
-│   │   └── preprocessing.py      # Pré-processamento
-│   ├── features/
-│   │   └── feature_engineering.py # Engenharia de features
-│   ├── models/
-│   │   ├── train.py              # Treinamento
-│   │   ├── predict.py            # Predição
-│   │   ├── evaluate.py           # Avaliação
-│   │   └── registry.py           # Registro de modelos
-│   ├── visualization/
-│   │   └── plots.py              # Gráficos
-│   ├── pipeline/
-│   │   └── training_pipeline.py  # Pipeline completo
-│   └── utils/
-│       ├── helpers.py            # Funções auxiliares
-│       ├── config.py             # Configurações
-│       └── logging_config.py     # Logging
-│
-├── tests/
-│   ├── test_preprocessing.py
-│   ├── test_features.py
-│   ├── test_model.py
-│   └── test_app_logic.py
-│
-├── reports/
-│   ├── figures/                  # Gráficos e visualizações
-│   └── technical_report.md       # Relatório técnico
-│
-├── docs/
-│   ├── data_dictionary.md        # Dicionário de dados
-│   ├── methodology.md            # Metodologia completa
-│   └── architecture.md           # Arquitetura do sistema
-│
-├── requirements.txt              # Dependências
-├── pyproject.toml               # Configuração do projeto
-├── .gitignore
-├── Makefile                      # Automação de tarefas
-├── LICENSE
-└── README.md                     # Este arquivo
-```
 
 ---
 
@@ -441,14 +352,6 @@ A aplicação web interativa inclui:
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
----
-
-## Agradecimentos
-
-- Comunidade científica de IA em saúde
-
----
 
 ## Contato
 
